@@ -437,7 +437,7 @@ class Cloud_Server extends Cloud {
 			$this->_apiJson['server']['sharedIpGroupId'] = (int) $groupId;
         }
 		
-		echo json_encode($this->_apiJson);
+		//echo json_encode($this->_apiJson);
 
         $this->_doRequest(self::METHOD_POST);
 
