@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Cloud_LoadBalancer</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Cloud_LoadBalancer</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load Balancer API implementation</p>
+		<p class="notes">
+			Located in <a class="field" href="_Cloud---LoadBalancer.php.html">/Cloud/LoadBalancer.php</a> (line <span class="field">12</span>)
+		</p>
+		
+				
+		<pre><a href="../phpCloudServers/Cloud.html">Cloud</a>
+   |
+   --Cloud_LoadBalancer</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#addNode" title="details" class="method-name">addNode</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$balanerId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#createBalancer" title="details" class="method-name">createBalancer</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$protocol</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$virtualIp</span> = <span class="var-default">&quot;PUBLIC&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$algorithm</span> = <span class="var-default">&quot;RANDOM&quot;</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$connectionLogging</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$sessionPersistence</span> = <span class="var-default">null</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$virtualIP</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#deleteBalancer" title="details" class="method-name">deleteBalancer</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$balancerId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getBalancer" title="details" class="method-name">getBalancer</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$balancerId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getBalancers" title="details" class="method-name">getBalancers</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getNode" title="details" class="method-name">getNode</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$balancerId</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$nodeId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getNodes" title="details" class="method-name">getNodes</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$balancerId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getProtocols" title="details" class="method-name">getProtocols</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getVirtualIPs" title="details" class="method-name">getVirtualIPs</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$balancerId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#newNode" title="details" class="method-name">newNode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$address</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>, [<span class="var-type">strong</span>&nbsp;<span class="var-name">$condition</span> = <span class="var-default">true</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../phpCloudServers/Cloud.html">Cloud</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiJson">Cloud::$_apiJson</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiResource">Cloud::$_apiResource</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiResponse">Cloud::$_apiResponse</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiResponseCode">Cloud::$_apiResponseCode</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddNode" id="addNode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addNode</span> (line <span class="line-number">233</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a node to a balancer, must use newNode to define the nodes to add</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> JSON response with node details or false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			addNode
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$balanerId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$balanerId</span><span class="var-description">: ID of the balancer to add nodes to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateBalancer" id="createBalancer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">createBalancer</span> (line <span class="line-number">115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new load balancer</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string of balancer's configuration or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			createBalancer
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$protocol</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$virtualIp</span> = <span class="var-default">&quot;PUBLIC&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$algorithm</span> = <span class="var-default">&quot;RANDOM&quot;</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$connectionLogging</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$sessionPersistence</span> = <span class="var-default">null</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$virtualIP</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: balancer name, must be unique</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$port</span><span class="var-description">: external facing port balancer will use</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$protocol</span><span class="var-description">: protocol for the balancer</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$virtualIP</span><span class="var-description">: PUBLIC, SERVICENET or ID of existing IP</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$algorithm</span><span class="var-description">: Balancing algorithm to use</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$connectionLogging</span><span class="var-description">: Enable Connection logging</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sessionPersistence</span><span class="var-description">: HTTP_COOKIE is the only currently available option</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$virtualIp</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteBalancer" id="deleteBalancer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deleteBalancer</span> (line <span class="line-number">179</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete Balancer</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			deleteBalancer
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$balancerId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$balancerId</span><span class="var-description">: id of balancer you wish to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetBalancer" id="getBalancer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getBalancer</span> (line <span class="line-number">63</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves configuration details for specific server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json string containing server details or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getBalancer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$balancerId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$balancerId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetBalancers" id="getBalancers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getBalancers</span> (line <span class="line-number">38</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Lists current Loadbalancers</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json string containing current servers or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getBalancers
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetNode" id="getNode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getNode</span> (line <span class="line-number">216</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the details for a specific node on a specific balancer</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> JSON details of specific node or false on error</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getNode
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$balancerId</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$nodeId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$balancerId</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$nodeId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetNodes" id="getNodes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getNodes</span> (line <span class="line-number">198</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a list of nodes for a particular balancer</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> JSON node details or false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getNodes
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$balancerId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$balancerId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetProtocols" id="getProtocols"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getProtocols</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves all of the available balancing protocols</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing available protocol and ports or  false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getProtocols
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetVirtualIPs" id="getVirtualIPs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getVirtualIPs</span> (line <span class="line-number">260</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves list of virtual IPs on a specific balancer</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing details on the Virtual IPs  false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getVirtualIPs
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$balancerId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$balancerId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnewNode" id="newNode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">newNode</span> (line <span class="line-number">89</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a node before creating a balancer</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			newNode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$address</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>, [<span class="var-type">strong</span>&nbsp;<span class="var-name">$condition</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$address</span><span class="var-description">: IP Address of the node</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$port</span><span class="var-description">: local port on the node</span>			</li>
+					<li>
+				<span class="var-type">strong</span>
+				<span class="var-name">$condition</span><span class="var-description">: Whether the node is enabled</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../phpCloudServers/Cloud.html">Cloud</a></span></p>
+					<blockquote>
+													<img src="../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#method__construct">Cloud::__construct()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodauthenticate">Cloud::authenticate()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methoddisableCacheBuster">Cloud::disableCacheBuster()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methoddisableDebug">Cloud::disableDebug()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodenableCacheBuster">Cloud::enableCacheBuster()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodenableDebug">Cloud::enableDebug()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodgetLimits">Cloud::getLimits()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodgetToken">Cloud::getToken()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodsetToken">Cloud::setToken()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#method_doRequest">Cloud::_doRequest()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_consts'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../phpCloudServers/Cloud.html">Cloud</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_AUTH">Cloud::METHOD_AUTH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_DELETE">Cloud::METHOD_DELETE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_GET">Cloud::METHOD_GET</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_POST">Cloud::METHOD_POST</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_PUT">Cloud::METHOD_PUT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_BALANCER">Cloud::RESOURCE_BALANCER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_CDN">Cloud::RESOURCE_CDN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_DNS">Cloud::RESOURCE_DNS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_SERVER">Cloud::RESOURCE_SERVER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_STORAGE">Cloud::RESOURCE_STORAGE</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 09 May 2011 17:28:39 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Cloud_Server</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Cloud_Server</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for API access to Cloud Servers</p>
+		<p class="notes">
+			Located in <a class="field" href="_Cloud---Server.php.html">/Cloud/Server.php</a> (line <span class="field">11</span>)
+		</p>
+		
+				
+		<pre><a href="../phpCloudServers/Cloud.html">Cloud</a>
+   |
+   --Cloud_Server</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#addBackupSchedule" title="details" class="method-name">addBackupSchedule</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$weekly</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$daily</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$isEnabled</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#addServerFile" title="details" class="method-name">addServerFile</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#addSharedIpGroup" title="details" class="method-name">addSharedIpGroup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#confirmResize" title="details" class="method-name">confirmResize</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#createImage" title="details" class="method-name">createImage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#createServer" title="details" class="method-name">createServer</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$imageId</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$flavorId</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$groupId</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#deleteBackupSchedule" title="details" class="method-name">deleteBackupSchedule</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#deleteServer" title="details" class="method-name">deleteServer</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#deleteSharedIpGroup" title="details" class="method-name">deleteSharedIpGroup</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$groupId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getBackupSchedule" title="details" class="method-name">getBackupSchedule</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getFlavor" title="details" class="method-name">getFlavor</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$flavorId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getFlavors" title="details" class="method-name">getFlavors</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">json</span>
+										<a href="#getImage" title="details" class="method-name">getImage</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$imageId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getImages" title="details" class="method-name">getImages</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getServer" title="details" class="method-name">getServer</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getServerIp" title="details" class="method-name">getServerIp</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getServers" title="details" class="method-name">getServers</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getSharedIpGroup" title="details" class="method-name">getSharedIpGroup</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$groupId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getSharedIpGroups" title="details" class="method-name">getSharedIpGroups</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#rebootServer" title="details" class="method-name">rebootServer</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'soft'</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#rebuildServer" title="details" class="method-name">rebuildServer</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$imageId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#resizeServer" title="details" class="method-name">resizeServer</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flavorId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#revertResize" title="details" class="method-name">revertResize</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#shareServerIp" title="details" class="method-name">shareServerIp</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$serverIp</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$groupId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$doConfigure</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#unshareServerIp" title="details" class="method-name">unshareServerIp</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$serverIp</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#updateServer" title="details" class="method-name">updateServer</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../phpCloudServers/Cloud.html">Cloud</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiJson">Cloud::$_apiJson</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiResource">Cloud::$_apiResource</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiResponse">Cloud::$_apiResponse</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpCloudServers/Cloud.html#var$_apiResponseCode">Cloud::$_apiResponseCode</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddBackupSchedule" id="addBackupSchedule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addBackupSchedule</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a new back-up schedule for a server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success and false on failure</li>
+				<li><span class="field">throws:</span> Cloud_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			addBackupSchedule
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$weekly</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$daily</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$isEnabled</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of a server this back-up schedule is intended for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$weekly</span><span class="var-description">: day of the week this back-up should run, please  $_apiBackup array and/or documentation for valid parameters.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$daily</span><span class="var-description">: time of the day this back-up should run, please  $_apiBackup array and/or documentation for valid parameters.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$isEnabled</span><span class="var-description">: should this scheduled back-up be enabled or disabled,  default is set to enabled.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddServerFile" id="addServerFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addServerFile</span> (line <span class="line-number">458</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds file to inject while creating new server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns array of all files pending injection</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			addServerFile
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: full file path where file will be put (/etc/motd,etc)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$content</span><span class="var-description">: content of the file (Welcome to my server, etc)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddSharedIpGroup" id="addSharedIpGroup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addSharedIpGroup</span> (line <span class="line-number">246</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a server to shared ip group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing id of created shared ip group or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			addSharedIpGroup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name of shared ip group you are creating</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to add to this group</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconfirmResize" id="confirmResize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">confirmResize</span> (line <span class="line-number">554</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Confirm resize of server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			confirmResize
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server this confirmation is for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateImage" id="createImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">createImage</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new image of server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing details of created image or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			createImage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name of new image</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: server id for which you wish to base this image on</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateServer" id="createServer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">createServer</span> (line <span class="line-number">403</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new server on the cloud</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string of server's configuration or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			createServer
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$imageId</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$flavorId</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$groupId</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: server name, must be unique</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$imageId</span><span class="var-description">: server image you wish to use</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$flavorId</span><span class="var-description">: server flavor you wish to use</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$groupId</span><span class="var-description">: optional group id of server cluster</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteBackupSchedule" id="deleteBackupSchedule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deleteBackupSchedule</span> (line <span class="line-number">382</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes scheduled back-up for specific server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			deleteBackupSchedule
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to delete all scheduled back-ups  for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteServer" id="deleteServer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deleteServer</span> (line <span class="line-number">492</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			deleteServer
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteSharedIpGroup" id="deleteSharedIpGroup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deleteSharedIpGroup</span> (line <span class="line-number">267</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete shared IP group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success and false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			deleteSharedIpGroup
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$groupId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$groupId</span><span class="var-description">: id of group you wish to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetBackupSchedule" id="getBackupSchedule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getBackupSchedule</span> (line <span class="line-number">325</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve back-up schedule for a specific server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string of current back-up schedule or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getBackupSchedule
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to retrieve back-up schedule for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFlavor" id="getFlavor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getFlavor</span> (line <span class="line-number">47</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves details regarding specific server flavor</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing details for requested flavor or  false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getFlavor
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$flavorId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$flavorId</span><span class="var-description">: id of a flavor you wish to retrieve details for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFlavors" id="getFlavors"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getFlavors</span> (line <span class="line-number">66</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves all of the available server flavors</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing available server configurations or  false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getFlavors
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isDetailed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetImage" id="getImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getImage</span> (line <span class="line-number">107</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves details of specific image</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> string containing details of requested image</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">json</span>
+		<span class="method-name">
+			getImage
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$imageId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$imageId</span><span class="var-description">: id of image you wish to retrieve details for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetImages" id="getImages"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getImages</span> (line <span class="line-number">123</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves all of the available images</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string of available images or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getImages
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isDetailed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetServer" id="getServer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getServer</span> (line <span class="line-number">141</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves configuration details for specific server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json string containing server details or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getServer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$serverId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetServerIp" id="getServerIp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getServerIp</span> (line <span class="line-number">226</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get IP's assigned to server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string of server addresses or false of failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getServerIp
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to retrieve ips for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: type of addresses to retrieve could be private/public or  false for both types.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetServers" id="getServers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getServers</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves currently available servers</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json string containing current servers or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getServers
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isDetailed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSharedIpGroup" id="getSharedIpGroup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getSharedIpGroup</span> (line <span class="line-number">287</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve details for specific IP group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string containing details about requested group  or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getSharedIpGroup
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$groupId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$groupId</span><span class="var-description">: id of specific shared group you wish to retrieve details  for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSharedIpGroups" id="getSharedIpGroups"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getSharedIpGroups</span> (line <span class="line-number">306</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve all the available shared IP groups</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns json string of groups or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getSharedIpGroups
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$isDetailed</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$isDetailed</span><span class="var-description">: should response contain an array of servers group has</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrebootServer" id="rebootServer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">rebootServer</span> (line <span class="line-number">595</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reboots server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			rebootServer
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'soft'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to reboot</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: specify what kind of reboot you wish to perform</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrebuildServer" id="rebuildServer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">rebuildServer</span> (line <span class="line-number">512</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rebuild server using another server image</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			rebuildServer
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$imageId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to rebuild</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$imageId</span><span class="var-description">: id of server image you wish to use for this rebuild</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodresizeServer" id="resizeServer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">resizeServer</span> (line <span class="line-number">533</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resize server to another flavor (server configuration)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			resizeServer
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flavorId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to resize</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$flavorId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrevertResize" id="revertResize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">revertResize</span> (line <span class="line-number">574</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Revert resize changes</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on fail</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			revertResize
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to revert resize for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodshareServerIp" id="shareServerIp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">shareServerIp</span> (line <span class="line-number">185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			shareServerIp
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$serverIp</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$groupId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$doConfigure</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$serverId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$serverIp</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$groupId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$doConfigure</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunshareServerIp" id="unshareServerIp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">unshareServerIp</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes a shared server IP from server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true on success or false on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			unshareServerIp
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$serverIp</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server this action is peformed for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$serverIp</span><span class="var-description">: IP you wish to unshare</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateServer" id="updateServer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">updateServer</span> (line <span class="line-number">471</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Update server's name and password</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns false on failure or server configuration on success</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			updateServer
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$serverId</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serverId</span><span class="var-description">: id of server you wish to update</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: new server name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: new server password</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../phpCloudServers/Cloud.html">Cloud</a></span></p>
+					<blockquote>
+													<img src="../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#method__construct">Cloud::__construct()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodauthenticate">Cloud::authenticate()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methoddisableCacheBuster">Cloud::disableCacheBuster()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methoddisableDebug">Cloud::disableDebug()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodenableCacheBuster">Cloud::enableCacheBuster()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodenableDebug">Cloud::enableDebug()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodgetLimits">Cloud::getLimits()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodgetToken">Cloud::getToken()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#methodsetToken">Cloud::setToken()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpCloudServers/Cloud.html#method_doRequest">Cloud::_doRequest()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_consts'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../phpCloudServers/Cloud.html">Cloud</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_AUTH">Cloud::METHOD_AUTH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_DELETE">Cloud::METHOD_DELETE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_GET">Cloud::METHOD_GET</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_POST">Cloud::METHOD_POST</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constMETHOD_PUT">Cloud::METHOD_PUT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_BALANCER">Cloud::RESOURCE_BALANCER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_CDN">Cloud::RESOURCE_CDN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_DNS">Cloud::RESOURCE_DNS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_SERVER">Cloud::RESOURCE_SERVER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../phpCloudServers/Cloud.html#constRESOURCE_STORAGE">Cloud::RESOURCE_STORAGE</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 09 May 2011 17:28:39 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

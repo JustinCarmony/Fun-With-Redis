@@ -1,0 +1,36 @@
+*********************************************************
+* Rackspace Cloud API PHP Binding                       *
+*********************************************************
+
+PHP Binding for Rackspace Cloud APIs, originally developed for Cloud Servers but
+being extended to add support for Cloud Load Balancers, Cloud DNS and Cloud
+Files.
+
+*Usage*
+
+Include Cloud.php in your project, and call the constructor for the service you
+require. e.g. for Cloud Servers:
+
+    DEFINE('API_ID', '');
+    DEFINE('API_KEY', '');
+
+    $cloud = new Cloud_Server(API_ID, API_KEY);
+
+By default this will create a connection to the US API, to use the UK API add
+the location variable "UK" to the end of the constructor, e.g.:
+
+    $cloud = new Cloud_Server(API_ID, API_KEY, "UK");
+
+Cloud Load Balancers operate in the same way and have an additional optional
+variable for the datacentre that contains the Load Balancers, defaulting to
+"ORD" (Chicago).  To create a connection to the DFW datacentre:
+
+    $cloud = new Cloud_LoadBalancer(API_ID, API_Key, "US", "DFW");
+
+*Docs*
+
+Documentation exits in the /Docs folder but needs work
+
+*Example*
+
+More detailed examples are in the /Examples folder

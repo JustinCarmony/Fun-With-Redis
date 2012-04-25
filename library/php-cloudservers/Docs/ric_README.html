@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title></title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<div align="center"><h1>README</h1></div>
+<pre>
+*********************************************************
+* Rackspace Cloud API PHP Binding                       *
+*********************************************************
+
+PHP Binding for Rackspace Cloud APIs, originally developed for Cloud Servers but
+being extended to add support for Cloud Load Balancers, Cloud DNS and Cloud
+Files.
+
+*Usage*
+
+Include Cloud.php in your project, and call the constructor for the service you
+require. e.g. for Cloud Servers:
+
+    DEFINE('API_ID', '');
+    DEFINE('API_KEY', '');
+
+    $cloud = new Cloud_Server(API_ID, API_KEY);
+
+By default this will create a connection to the US API, to use the UK API add
+the location variable &quot;UK&quot; to the end of the constructor, e.g.:
+
+    $cloud = new Cloud_Server(API_ID, API_KEY, &quot;UK&quot;);
+
+Cloud Load Balancers operate in the same way and have an additional optional
+variable for the datacentre that contains the Load Balancers, defaulting to
+&quot;ORD&quot; (Chicago).  To create a connection to the DFW datacentre:
+
+    $cloud = new Cloud_LoadBalancer(API_ID, API_Key, &quot;US&quot;, &quot;DFW&quot;);
+
+*Docs*
+
+Documentation exits in the /Docs folder but needs work
+
+*Example*
+
+More detailed examples are in the /Examples folder
+</pre>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 09 May 2011 17:28:36 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

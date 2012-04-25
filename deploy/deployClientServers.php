@@ -1,0 +1,42 @@
+<?php
+
+/*
+ * Flavors:
+ * string(422) "{"flavors":[{"id":1,"ram":256,"disk":10,"name":"256 server"},{"id":2,"ram":512,"disk":20,"name":"512 server"},{"id":3,"ram":1024,"disk":40,"name":"1GB server"},{"id":4,"ram":2048,"disk":80,"name":"2GB server"},{"id":5,"ram":4096,"disk":160,"name":"4GB server"},{"id":6,"ram":8192,"disk":320,"name":"8GB server"},{"id":7,"ram":15872,"disk":620,"name":"15.5GB server"},{"id":8,"ram":30720,"disk":1200,"name":"30GB server"}]}"
+ * 
+ * Images:
+ * string(2460) "{"images":[{"id":112,"status":"ACTIVE","updated":"2011-04-21T10:24:01-05:00","name":"Ubuntu 10.04 LTS"},{"id":81,"status":"ACTIVE","updated":"2011-10-04T08:39:34-05:00","name":"Windows Server 2008 R2 x64 - SQL Web"},{"id":58,"status":"ACTIVE","updated":"2010-09-17T07:19:20-05:00","name":"Windows Server 2008 R2 x64 - MSSQL2K8R2"},{"id":100,"status":"ACTIVE","updated":"2011-09-12T09:09:23-05:00","name":"Arch 2011.10"},{"id":31,"status":"ACTIVE","updated":"2010-01-26T12:07:44-06:00","name":"Windows Server 2008 SP2 x86"},{"id":108,"status":"ACTIVE","updated":"2011-11-01T08:32:30-05:00","name":"Gentoo 11.0"},{"id":109,"status":"ACTIVE","updated":"2011-11-03T06:28:56-05:00","name":"openSUSE 12"},{"id":24,"status":"ACTIVE","updated":"2010-01-26T12:07:04-06:00","name":"Windows Server 2008 SP2 x64"},{"id":110,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"Red Hat Enterprise Linux 5.5"},{"id":57,"status":"ACTIVE","updated":"2010-09-17T07:16:25-05:00","name":"Windows Server 2008 SP2 x64 - MSSQL2K8R2"},{"id":111,"status":"ACTIVE","updated":"2011-09-12T10:53:12-05:00","name":"Red Hat Enterprise Linux 6"},{"id":120,"status":"ACTIVE","updated":"2012-01-03T04:39:05-06:00","name":"Fedora 16"},{"id":119,"status":"ACTIVE","updated":"2011-11-03T08:55:15-05:00","name":"Ubuntu 11.10"},{"id":116,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"Fedora 15"},{"id":56,"status":"ACTIVE","updated":"2010-09-17T07:12:56-05:00","name":"Windows Server 2008 SP2 x86 - MSSQL2K8R2"},{"id":114,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"CentOS 5.6"},{"id":115,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"Ubuntu 11.04"},{"id":103,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"Debian 5 (Lenny)"},{"id":104,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"Debian 6 (Squeeze)"},{"id":118,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"CentOS 6.0"},{"id":28,"status":"ACTIVE","updated":"2010-01-26T12:07:17-06:00","name":"Windows Server 2008 R2 x64"},{"id":106,"status":"ACTIVE","updated":"2011-08-17T05:11:30-05:00","name":"Fedora 14"},{"progress":100,"id":18377385,"status":"ACTIVE","created":"2012-02-02T20:40:33-06:00","updated":"2012-02-02T21:20:49-06:00","name":"daily","serverId":428406},{"progress":100,"id":18269682,"status":"ACTIVE","created":"2012-01-30T20:28:22-06:00","updated":"2012-01-30T21:06:18-06:00","name":"weekly","serverId":428406}]}"
+ */
+
+require '../bootstrap.php';
+
+$cloud = new Cloud_Server(API_ID, API_KEY);
+$cloud->enableDebug();
+
+$servers_to_deploy = 2;
+
+$server_count = 1;
+while($server_count < $servers_to_deploy)
+{
+	$server_count++;
+	
+	$name = MINION_PREFIX.$server_count.MINION_SUFFIX;
+	
+	if(!$predis->hget('server.minions', $server_count))
+	{
+		$response = $cloud->createServer($name, SERVER_IMAGE, SERVER_FLAVOR);
+		if($response)
+		{
+			$server = json_decode($response);
+			$server = $server->server;
+			var_dump($server);
+		}
+		else
+		{
+			echo "THERE WAS AN ERROR DEPLOYING $name !\n\n";
+		}
+		
+		exit();
+	}
+	
+}
