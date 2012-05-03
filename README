@@ -1,0 +1,6 @@
+Ideas for how this will work
+
+Master Server will have one worker
+
+Dependancies:
+- sysstat
