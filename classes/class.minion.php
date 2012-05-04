@@ -17,6 +17,7 @@ class Minion
 	public $instance_id;
 	public $reboot_id;
 	public $minion_id;
+	public $working = false;
 	public $method = 'idle';
 	public $pipeline = 'off';
 	public $pipeline_count = 100;
@@ -100,11 +101,16 @@ class Minion
 	public function Heartbeat()
 	{
 		$this->predis->hset('minion.heartbeats', $this->minion_id, time());
+		$status = new stdClass();
+		$status->working = $this->working;
+		$this->predis->hset('minion.status', $this->minion_id, json_encode($status));
 	}
 
 	public function Work()
 	{
 		$percent = $this->predis->get('system.workforce') / 10;
+
+		$this->working = false;
 
 		if($percent < 1)
 		{
@@ -112,11 +118,13 @@ class Minion
 			return;
 		}
 
-		if($this->instance_id % 10 > $percent)
+		if($this->minion_id % 10 > $percent)
 		{
 			usleep(1000000);
 			return;
 		}
+
+		$this->working = true;
 
 		$method = $this->method;
 		if(!$method)
