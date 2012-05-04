@@ -68,7 +68,7 @@ define('SCP_CMD', 'scp -o "StrictHostKeyChecking false" -o "UserKnownHostsFile /
 
 echo "**** CLEAN UP ****\n";
 echo "Clearing any previous deploying servers...\n";
-$predis->del('server.minions.deploying');
+//$predis->del('server.minions.deploying');
 
 
 $servers_to_deploy = 1;
@@ -76,6 +76,8 @@ if(isset($argv[1]) && is_numeric($argv[1]))
 {
 	$servers_to_deploy = (int)$argv[1];
 }
+
+$servers_to_deploy = 0;
 
 
 
