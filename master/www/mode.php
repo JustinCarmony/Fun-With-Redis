@@ -33,4 +33,14 @@ switch($mode)
 		break;
 }
 
+if($mode != 'increment')
+{
+	$predis->del('increment.value');
+}
+
+if($mode != 'random_number')
+{
+	$predis->del('random_number.set');
+}
+
 echo '{ success: "true" }';

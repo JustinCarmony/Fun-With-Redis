@@ -12,6 +12,10 @@ chdir(dirname(__FILE__));
 require '../../bootstrap.php';
 
 $stats = new stdClass();
+
+// Get Minion Statuses
+
+// Get the Commands Per Second
 $stats->lblCmdPerSec = number_format($predis->get('stats.cps'));
 echo json_encode($stats);
 exit();

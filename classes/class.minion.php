@@ -103,6 +103,7 @@ class Minion
 		$this->predis->hset('minion.heartbeats', $this->minion_id, time());
 		$status = new stdClass();
 		$status->working = $this->working;
+		$status->ips = Utility::GetMachineIPs();
 		$this->predis->hset('minion.status', $this->minion_id, json_encode($status));
 	}
 
@@ -176,5 +177,71 @@ class Minion
 				$this->predis->incr('increment.value');
 			}
 		}
+	}
+
+	public function Random_Number()
+	{
+		$count = 0;
+		$limit = 5000;
+		if($this->pipeline == 'on')
+		{
+			$pipe = null;
+			while($count < $limit)
+			{
+				$count++;
+				if(!$pipe)
+				{
+					$pipe = $this->predis->pipeline();
+				}
+
+				$num = rand(1, 10000000);
+
+				$pipe->set('random_number.set', $num, $num);
+				if($count % $this->pipeline_count == 0)
+				{
+					$pipe->execute();
+					unset($pipe);
+				}
+			}
+
+			if($pipe)
+			{
+				$pipe->execute();
+			}
+		}
+		else
+		{
+			while($count < $limit)
+			{
+				$count++;
+				$num = rand(1, 10000000);
+
+				$this->predis->set('random_number.set', $num, $num);
+			}
+		}
+	}
+
+	public function Md5_Gen()
+	{
+		usleep(1000000);
+		echo ".";
+	}
+
+	public function Rand_Read()
+	{
+		usleep(1000000);
+		echo ".";
+	}
+
+	public function Rand_Write()
+	{
+		usleep(1000000);
+		echo ".";
+	}
+
+	public function Bench()
+	{
+		usleep(1000000);
+		echo ".";
 	}
 }

@@ -18,6 +18,8 @@ class Master
 	protected $cmd_count = null;
 	protected $cmd_cps = null;
 
+	const MINION_HEARTBEAT_TIMEOUT = 60;
+
 	public function __construct($predis)
 	{
 		$this->predis = $predis;
@@ -36,19 +38,8 @@ class Master
 		while($work)
 		{
 			$count++;
-			// Determine Current CpS
-			$info = $this->predis->info();
-			$last_cmd_count = $this->cmd_count;
-			$this->cmd_count = $info['total_commands_processed'];
-			$this->cmd_cps = $this->cmd_count - $last_cmd_count;
-			$this->predis->set('stats.cps', $this->cmd_cps);
 
-
-			// Determine Current CPU
-			$process_id = $info['process_id'];
-			file_put_contents('/tmp/redis_process_id', $process_id);
-			$cpu = trim(exec("ps S -p $process_id -o pcpu="));
-			$this->predis->set('stats.cpu', $cpu);
+			$this->Work();
 
 			if($count >= 60)
 			{
@@ -77,6 +68,37 @@ class Master
 			// Wait exactly one second
 			usleep(1000000);
 		}
+	}
+
+	public function Work()
+	{
+		// Determine Current CpS
+		$info = $this->predis->info();
+		$last_cmd_count = $this->cmd_count;
+		$this->cmd_count = $info['total_commands_processed'];
+		$this->cmd_cps = $this->cmd_count - $last_cmd_count;
+		$this->predis->set('stats.cps', $this->cmd_cps);
+
+
+		// Determine Current CPU
+		$process_id = $info['process_id'];
+		file_put_contents('/tmp/redis_process_id', $process_id);
+		$cpu = trim(exec("ps S -p $process_id -o pcpu="));
+		$this->predis->set('stats.cpu', $cpu);
+
+		// Prune Workers
+		$time = time();
+		$heartbeats = $this->predis->hgetall('minion.heartbeats');
+
+		foreach($heartbeats as $minion_id => $last_hb)
+		{
+			if($time - $last_hb > self::MINION_HEARTBEAT_TIMEOUT)
+			{
+				$this->predis->hdel('minion.heartbeats', $minion_id);
+				$this->predis->hdel('minion.status', $minion_id);
+			}
+		}
+
 	}
 
 	public function Startup()
