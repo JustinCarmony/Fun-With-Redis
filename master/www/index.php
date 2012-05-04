@@ -50,7 +50,8 @@
 				<span class="icon-bar"></span>
 			</a>
 			<a class="brand" href="#">Fun with Redis - Ludicrous Speed Style</a>
-			<a class="brand" href="#" style="floatL:right;" onclick="HardReset(); return false;">Hard Reset</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="brand" href="#" style="floatL:right;" onclick="HardReset(); return false;">Hard Reset</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="brand" href="#" style="floatL:right;" onclick="MasterReset(); return false;">Master Reset</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		</div>
 	</div>
 </div>
