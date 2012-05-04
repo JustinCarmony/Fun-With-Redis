@@ -14,7 +14,7 @@ require 'library/php-cloudservers/Cloud/Cloud.php';
 require 'library/predis/lib/Predis/Autoloader.php';
 require 'classes/class.master.php';
 require 'classes/class.minion.php';
-require 'classes/class.bootstrap.php';
+require 'classes/class.utility.php';
 
 Predis\Autoloader::register();
 
