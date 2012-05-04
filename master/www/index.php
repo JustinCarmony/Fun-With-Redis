@@ -186,6 +186,18 @@
 				PollMinions(true);
 			});
 		});
+
+		// Pipeline
+		$('#btnGrpPipeline .btn').click(function(){
+			$('#btnGrpPipeline .btn').removeClass('btn-primary');
+			console.log("Start Click");
+			var btn = this;
+			$.post('cmd.php', {cmd: "set", args:["system.pipeline", $(this).data('pipeline')]}, function(){
+				console.log("End Click");
+				$(btn).addClass('btn-primary');
+				PollMinions(true);
+			});
+		});
 	}
 
 	function LoadData()
