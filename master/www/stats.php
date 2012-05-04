@@ -15,7 +15,8 @@ $stats = new stdClass();
 
 // Get Minion Statuses
 $info = $predis->info();
-$stats->lblTotalCommands = $info['total_commands_processed'];
+$stats->lblTotalCommandsExecuted = $info['total_commands_processed'];
+$stats->lblMaxRpS = $predis->get('stats.cps_max');
 
 $minions = $predis->hgetall('minion.status');
 
