@@ -281,7 +281,7 @@
 				minion_data = data;
 				if(!only_once)
 				{
-					setTimeout("PollMinions(false);", 1000);
+					setTimeout("PollMinions(false);", 3000);
 				}
 				UpdateMinions();
 			},
@@ -289,7 +289,7 @@
 			{
 				if(!only_once)
 				{
-					setTimeout("PollMinions(false);", 5000);
+					setTimeout("PollMinions(false);", 6000);
 				}
 			}
 		});
@@ -308,6 +308,7 @@
 						break;
 					}
 				}
+
 				console.log(server_data);
 				if(!server_data)
 				{
