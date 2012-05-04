@@ -31,7 +31,7 @@ cd /var/fun && git pull:
     require:
         - cmd: git-fun-clone
 
-{% range number from 1 to 8 %}
+{% for number in '1','2','3','4','5','6','7','8' %}
 
 /usr/local/bin/solo -port=500{{ number }} php /var/fun/minion/bin/worker.minion.php {{ number }} >> /tmp/worker.minion.log.{{ number }}:
     cron:
