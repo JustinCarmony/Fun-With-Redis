@@ -115,7 +115,7 @@
 							<button data-pipeline="on" class="btn">Enabled</button>
 						</div>
 					</div>
-					<div class="span4"><form class="form-inline"><label><strong># of Commands</strong></label> <input type="text" class="span1" value="100"></form></div>
+					<div class="span4"><form class="form-inline"><label><strong># of Commands</strong></label> <input id="txtPipelineCount" type="text" class="span1" value="100"></form></div>
 				</div>
 			</div>
 			<div class="span6">
@@ -193,6 +193,12 @@
 			console.log("Start Click");
 			var btn = this;
 			$.post('cmd.php', {cmd: "set", args:["system.pipeline", $(this).data('pipeline')]}, function(){
+				console.log("End Click");
+				$(btn).addClass('btn-primary');
+				PollMinions(true);
+			});
+
+			$.post('cmd.php', {cmd: "set", args:["system.pipeline_count", $('#txtPipelineCount').val()]}, function(){
 				console.log("End Click");
 				$(btn).addClass('btn-primary');
 				PollMinions(true);
