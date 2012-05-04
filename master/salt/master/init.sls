@@ -13,10 +13,13 @@ php5:
             - php5
             - php5-dev 
             - php-pear 
-            - php5-xcache
             - php-apc
     require:
         - pkg: apache2
+
+php5-xcache:
+    pkg:
+        - uninstalled
 
 /etc/apache2/sites-available/default:
     file:
