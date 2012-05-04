@@ -77,6 +77,9 @@ class Minion
 
 	public function Startup()
 	{
+		$this->Log("Random Sleep to offset Minions");
+		
+		usleep(rand(1000000,5000000));
 		$this->Log("Executing Minion Startup...");
 		$this->Log("Internal ID: ".$this->internal_id);
 		$this->instance_id = $this->predis->get('system.instance');
