@@ -199,3 +199,6 @@ sleep(60);
 echo "\n\n******* Updating Via Salt *********\n";
 
 system('salt "*" state.highstate');
+system('salt "*" state.highstate');
+
+echo "\n\n******** FINISHED! ***********\n";
