@@ -19,7 +19,7 @@ php5:
 
 php5-xcache:
     pkg:
-        - uninstalled
+        - purged
 
 /etc/apache2/sites-available/default:
     file:
