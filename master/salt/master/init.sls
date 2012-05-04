@@ -1,7 +1,8 @@
 apache2:
     pkg:
         - installed
-
+    watch:
+        - file: /etc/apache2/sites-available/default
 php5:
     pkg:
         - installed
@@ -12,3 +13,11 @@ php5:
             - php-pear 
             - php5-xcache
             - php-apc
+    require:
+        - pkg: apache2
+
+/etc/apache2/sites-available/default:
+    file:
+        - managed
+        - source: salt://master/files/default
+        - mode: 755
