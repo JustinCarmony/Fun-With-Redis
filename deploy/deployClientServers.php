@@ -192,3 +192,10 @@ while($predis->hlen('server.minions.deploying') > 0)
 }
 
 echo "\n\n******* SERVERS DEPLOYED *********\n";
+
+echo "\nWe're waiting a minute before executing salt highstate...\n";
+sleep(60);
+
+echo "\n\n******* Updating Via Salt *********\n";
+
+system('salt "*" state.highstate');
