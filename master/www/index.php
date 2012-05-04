@@ -339,10 +339,14 @@
 				if(minion_v.working)
 				{
 					status = 'Working';
+					$('#' + minion_k).removeClass('alert-info');
+					$('#' + minion_k).addClass('alert-success');
 				}
 				else
 				{
 					status = '<em>Waiting</em>';
+					$('#' + minion_k).removeClass('alert-success');
+					$('#' + minion_k).addClass('alert-info');
 				}
 				
 				$('#' + minion_k + ' .status').html(status);
