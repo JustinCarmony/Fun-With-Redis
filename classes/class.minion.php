@@ -70,6 +70,8 @@ class Minion
 				$this->Startup();
 				$this->Log("System Reset Complete, New Instace ID: ".$this->instance_id);
 			}
+
+			$this->Heartbeat();
 		}
 	}
 
@@ -138,6 +140,7 @@ class Minion
 		}
 
 		$this->$method();
+
 	}
 
 	public function Idle()
