@@ -21,6 +21,8 @@ class Minion
 	public $method = 'idle';
 	public $pipeline = 'off';
 	public $pipeline_count = 100;
+	public $latency_ms = null;
+	public $latency_start = 0;
 
 
 	public function __construct($predis, $internal_id)
@@ -32,6 +34,16 @@ class Minion
 	public function Log($txt)
 	{
 		echo "[".number_format(round(microtime(true), 2), 2, '.', '')."] ".$txt."\n";
+	}
+
+	public function StartLatency()
+	{
+		$this->latency_start = microtime(true);
+	}
+
+	public function EndLatency()
+	{
+		$this->latency_ms = round((microtime(true) - $this->latency_start) * 1000, 0);
 	}
 
 	public function Run()
@@ -112,6 +124,7 @@ class Minion
 		$status = new stdClass();
 		$status->working = $this->working;
 		$status->heartbeat = $time;
+		$status->latency_ms = $this->latency_ms;
 		$ips = Utility::GetMachineIPs();
 		$status->ip = $ips[3]; // Get the internal ID
 		$status->hostname = gethostname();
@@ -120,7 +133,9 @@ class Minion
 
 	public function Work()
 	{
+		$this->StartLatency();
 		$percent = $this->predis->get('system.workforce') / 10;
+		$this->EndLatency();
 
 		$this->working = false;
 
@@ -171,14 +186,18 @@ class Minion
 				$pipe->incr('increment.value');
 				if($count % $this->pipeline_count == 0)
 				{
+					$this->StartLatency();
 					$pipe->execute();
+					$this->EndLatency();
 					unset($pipe);
 				}
 			}
 
 			if($pipe)
 			{
+				$this->StartLatency();
 				$pipe->execute();
+				$this->EndLatency();
 			}
 		}
 		else
@@ -186,7 +205,9 @@ class Minion
 			while($count < $limit)
 			{
 				$count++;
+				$this->StartLatency();
 				$this->predis->incr('increment.value');
+				$this->EndLatency();
 			}
 		}
 	}
@@ -211,14 +232,18 @@ class Minion
 				$pipe->hset('random_number.set', $num, $num);
 				if($count % $this->pipeline_count == 0)
 				{
+					$this->StartLatency();
 					$pipe->execute();
+					$this->EndLatency();
 					unset($pipe);
 				}
 			}
 
 			if($pipe)
 			{
+				$this->StartLatency();
 				$pipe->execute();
+				$this->EndLatency();
 			}
 		}
 		else
@@ -228,7 +253,9 @@ class Minion
 				$count++;
 				$num = rand(1, 5000000);
 
+				$this->StartLatency();
 				$this->predis->hset('random_number.set', $num, $num);
+				$this->EndLatency();
 			}
 		}
 	}
