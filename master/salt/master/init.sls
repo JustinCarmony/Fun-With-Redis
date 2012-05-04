@@ -23,3 +23,8 @@ php5:
         - managed
         - source: salt://master/files/default
         - mode: 755
+
+/var/fun/master/www/:
+    file:
+        - directory
+        - mode: 755
