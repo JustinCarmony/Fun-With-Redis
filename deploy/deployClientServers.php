@@ -68,12 +68,23 @@ echo "**** CLEAN UP ****\n";
 echo "Clearing any previous deploying servers...\n";
 $predis->del('server.minions.deploying');
 
+
+$servers_to_deploy = 1;
+if(isset($argv[1]) && is_int($argv[1]))
+{
+	$servers_to_deploy = $argv[1];
+}
+
+
+
 echo "Clean Up Complete\n";
+
+echo "\n***** Number of Servers to Deploy: $servers_to_deploy ******\n";
 
 $cloud = new Cloud_Server(API_ID, API_KEY);
 //$cloud->enableDebug();
 $cloud->addServerFile('/root/.ssh/authorized_keys', ROOT_PUB_KEY);
-$servers_to_deploy = 1;
+
 
 $server_start = $predis->get('server.minions.autoincr');
 if(!$server_start)
