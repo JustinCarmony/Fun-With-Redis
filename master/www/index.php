@@ -216,6 +216,11 @@
 
 	function LoadData()
 	{
+
+	}
+
+	function ResetPanel()
+	{
 		// Reset to Idle
 		$('#btnGroupMode .btn[data-mode="idle"]').click();
 	}
@@ -292,6 +297,7 @@
 		LoadData();
 		PollCpu();
 		PollStats();
+		ResetPanel();
 	});
 </script>
 
