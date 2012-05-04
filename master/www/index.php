@@ -300,7 +300,6 @@
 		var minion_list = [];
 
 		$.each(minion_data.servers, function(server_k, server_v){
-			console.log($('#' + server_k).length);
 			if($('#' + server_k).length == 0)
 			{
 				// Get First Minion
