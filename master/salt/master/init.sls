@@ -28,3 +28,5 @@ php5:
     file:
         - directory
         - mode: 755
+        - recurse:
+            - mode
