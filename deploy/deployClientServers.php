@@ -50,6 +50,8 @@ object(stdClass)#18 (10) {
 
 */
 
+chdir(dirname(__FILE__));
+
 // SSH ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 echo "**** INIT ****\n";
@@ -58,6 +60,7 @@ echo "Starting Bootstrap...\n";
 require '../bootstrap.php';
 
 define('SSH_CMD', 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no');
+define('SCP_CMD', 'scp -o "StrictHostKeyChecking false" -o "UserKnownHostsFile /dev/null"');
 
 echo "**** CLEAN UP ****\n";
 echo "Clearing any previous deploying servers...\n";
@@ -142,7 +145,23 @@ while($predis->hlen('server.minions.deploying') > 0)
 			echo "**** Server $server_count [{$server_info->name}] is Active! ****\n\n";
 			$predis->hdel('server.minions.deploying', $server_number);
 			// Do SSH Stuff!
-			$cmd = SSH_CMD." root@".$server_info->addresses->public[0]." touch /tmp/worked.txt";
+			$cmd = SCP_CMD." ./minion-setup.sh root@".$server_info->addresses->public[0].":/tmp/minion-setup.sh";
+
+			echo "Preparing to execute command: $cmd \n";
+			echo "Executing... \n";
+			system($cmd);
+			echo "\n\n.... Done!\n";
+
+			// Do SSH Stuff!
+			$cmd = SCP_CMD." ./minion root@".$server_info->addresses->public[0].":/tmp/minion";
+
+			echo "Preparing to execute command: $cmd \n";
+			echo "Executing... \n";
+			system($cmd);
+			echo "\n\n.... Done!\n";
+
+			// Do SSH Stuff!
+			$cmd = SSH_CMD." root@".$server_info->addresses->public[0]." bash /tmp/minion-setup.sh";
 
 			echo "Preparing to execute command: $cmd \n";
 			echo "Executing... \n";
