@@ -31,3 +31,14 @@ cd /var/fun && git pull:
     require:
         - cmd: git-fun-clone
 
+{% range number from 1 to 8 %}
+
+/usr/local/bin/solo -port=500{{ number }} php /var/fun/minion/bin/worker.minion.php {{ number }} >> /tmp/worker.minion.log.{{ number }}:
+    cron:
+        - present
+        - user: root
+    require:
+        - file: /usr/local/bin/solo
+
+
+{% endrange %}
