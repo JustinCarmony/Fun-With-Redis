@@ -301,8 +301,18 @@
 			if($('#' + server_k).html() == null)
 			{
 				// Get First Minion
-				var server_data = $.first(server_v);
+				var server_data;
+				for (var i in obj) {
+					if (obj.hasOwnProperty(i) && typeof(i) !== 'function') {
+						server_data = obj[i];
+						break;
+					}
+				}
 				console.log(server_data);
+				if(!server_data)
+				{
+					return;
+				}
 
 				var server_html = '<div id="' + server_k + '" class="well server_listing"><p class="info">'
 					+ '<strong>IP:</strong> '+ '</p></div>'
