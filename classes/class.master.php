@@ -76,20 +76,22 @@ class Master
 		$info = $this->predis->info();
 		$last_cmd_count = $this->cmd_count;
 		$this->cmd_count = $info['total_commands_processed'];
-		$this->cmd_cps = $this->cmd_count - $last_cmd_count;
-		$this->predis->set('stats.cps', $this->cmd_cps);
-		$max_cps = $this->predis->get('stats.cps_max');
-		if($this->cmd_cps > $max_cps)
+		if($last_cmd_count > 0)
 		{
-			$this->predis->set('stats.cps_max', $this->cmd_cps);
+			$this->cmd_cps = $this->cmd_count - $last_cmd_count;
+			$prev_cmd_cps = $this->predis->get('stats.cps');
+			$this->predis->set('stats.cps', $this->cmd_cps);
+			$max_cps = $this->predis->get('stats.cps_max');
+			if($this->cmd_cps > $max_cps)
+			{
+				$this->predis->set('stats.cps_max', $this->cmd_cps);
+			}
 		}
-
-
 		// Determine Current CPU
-		$process_id = $info['process_id'];
+		/* $process_id = $info['process_id'];
 		file_put_contents('/tmp/redis_process_id', $process_id);
 		$cpu = trim(exec("ps S -p $process_id -o pcpu="));
-		$this->predis->set('stats.cpu', $cpu);
+		$this->predis->set('stats.cpu', $cpu); */
 
 		// Prune Workers
 		$time = time();
@@ -132,5 +134,9 @@ class Master
 		// Reset minion heartbeats and statuses
 		$this->predis->del('minion.heartbeats');
 		$this->predis->del('minion.status');
+
+		// Delete Stats
+		$this->predis->del('stats.cps');
+		$this->predis->del('stats.cps_max');
 	}
 }
