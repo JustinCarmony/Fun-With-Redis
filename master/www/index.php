@@ -299,7 +299,7 @@
 	function UpdateMinions()
 	{
 		var minion_list = [];
-		$('#lblServersCount').html(minion_data.servers.length);
+		$('#lblServersCount').html($.size(minion_data.servers));
 		$.each(minion_data.servers, function(server_k, server_v){
 			if($('#' + server_k).length == 0)
 			{
