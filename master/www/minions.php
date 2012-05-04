@@ -13,7 +13,7 @@ require '../../bootstrap.php';
 
 $stats = new stdClass();
 
-$minions = $predis->hgetall('minions');
+$minions = $predis->hgetall('minions.status');
 ksort($minions, SORT_NUMERIC);
 
 $servers = array();
