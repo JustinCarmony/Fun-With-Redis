@@ -11,4 +11,4 @@ php5:
             - php5-dev 
             - php-pear 
             - php5-xcache
-            - php5-apc
+            - php-apc
