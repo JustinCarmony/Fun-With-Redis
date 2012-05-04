@@ -103,7 +103,9 @@ class Minion
 		$this->predis->hset('minion.heartbeats', $this->minion_id, time());
 		$status = new stdClass();
 		$status->working = $this->working;
-		$status->ips = Utility::GetMachineIPs();
+		$ips = Utility::GetMachineIPs();
+		$status->ip = $ips[3]; // Get the internal ID
+		$status->hostname = gethostname();
 		$this->predis->hset('minion.status', $this->minion_id, json_encode($status));
 	}
 
