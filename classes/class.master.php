@@ -123,5 +123,9 @@ class Master
 
 		$this->Log("Setting system.mode to idle");
 		$this->predis->set('system.mode', 'idle');
+
+		// Reset minion heartbeats and statuses
+		$this->predis->del('minion.heartbeats');
+		$this->predis->del('minion.status');
 	}
 }
