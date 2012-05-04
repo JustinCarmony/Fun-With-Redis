@@ -351,7 +351,7 @@
 				
 				$('#' + minion_k + ' .status').html(status);
 				$('#' + minion_k + ' .internal_id').html(minion_v.internal_id);
-				$('#' + minion_k + ' .latency').html(minion_v.latency);
+				$('#' + minion_k + ' .latency_ms').html(minion_v.latency_ms);
 			});
 
 		});
