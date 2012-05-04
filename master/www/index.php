@@ -50,7 +50,7 @@
 				<span class="icon-bar"></span>
 			</a>
 			<a class="brand" href="#">Fun with Redis - Ludicrous Speed Style</a>
-
+			<a class="brand" href="#" style="floatL:right;" onclick="HardReset(); return false;">Hard Reset</a>
 		</div>
 	</div>
 </div>
@@ -291,6 +291,15 @@
 					setTimeout("PollMinions(false);", 5000);
 				}
 			}
+		});
+	}
+
+	function HardReset()
+	{
+		$.post('cmd.php', {cmd: "incr", args:["system.instance"]}, function(){
+			console.log("End Click");
+			$(btn).addClass('btn-primary');
+			PollMinions(true);
 		});
 	}
 
