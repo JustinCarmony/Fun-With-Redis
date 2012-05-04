@@ -52,7 +52,7 @@ switch ($mode)
 		break;
 	case 'random_number':
 		$len = $predis->hlen('random_number.set');
-		$modeStatus = '<h1 style="text-align:center;">Randomly Generated '.number_format($len).' of 10,000,000</h1>';
+		$modeStatus = '<h1 style="text-align:center;">Randomly Generated '.number_format($len).' of 5,000,000</h1>';
 		break;
 }
 $stats->lblModeStatus = $modeStatus;

@@ -206,7 +206,7 @@ class Minion
 					$pipe = $this->predis->pipeline();
 				}
 
-				$num = rand(1, 10000000);
+				$num = rand(1, 5000000);
 
 				$pipe->hset('random_number.set', $num, $num);
 				if($count % $this->pipeline_count == 0)
@@ -226,7 +226,7 @@ class Minion
 			while($count < $limit)
 			{
 				$count++;
-				$num = rand(1, 10000000);
+				$num = rand(1, 5000000);
 
 				$this->predis->hset('random_number.set', $num, $num);
 			}
