@@ -4,6 +4,7 @@ core-tools:
         - names:
             - git-core
             - sysv-rc-conf
+            - htop
 
 /var/deploy:
     file:
@@ -15,4 +16,3 @@ core-tools:
         - managed
         - source: salt://files/solo
         - mode: 755
-        
