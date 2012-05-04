@@ -52,6 +52,8 @@ object(stdClass)#18 (10) {
 
 chdir(dirname(__FILE__));
 
+$start_time = time();
+
 // SSH ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 echo "**** INIT ****\n";
@@ -216,3 +218,9 @@ system('salt "*" state.highstate');
 system('salt "*" state.highstate');
 
 echo "\n\n******** FINISHED! ***********\n";
+
+$end_time = time();
+
+$diff = $end_time - $start_time;
+
+echo "Start Time: $start_time   End Time: $end_time     Seconds: $diff\n\n";
