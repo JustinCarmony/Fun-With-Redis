@@ -71,7 +71,7 @@
 		<hr />
 		<div class="row">
 			<div class="span12">
-				<h2>CPU Usage: <span id="lblCpuUsage">-</span>%</h2>
+				<h2>Redis CPU Usage: <span id="lblCpuUsage">-</span>%</h2>
 				<div class="progress progress-info" style="height:30px;">
 					<div id="barCpuUsage" class="bar" style="width:0%; height:30px;"></div>
 				</div>
@@ -122,10 +122,11 @@
 			<div class="span6">
 				<div class="well">
 					<h1>A Few Fun Stats</h1>
-					<h3>Minions Available: <span id="lblMinionsCount">200</span></h3>
-					<h3>Minions Active: <span id="lblMinionsActive">20</span></h3>
-					<h3>Total Commands Executed: <span id="lblTotalCommandsExecuted">300,000</span></h3>
-					<h3>Max Recorded CpS: <span id="lblMaxRpS">300,000</span></h3>
+					<h3>Servers Available: <span id="lblServersCount">0</span></h3>
+					<h3>Minions Available: <span id="lblMinionsCount">0</span></h3>
+					<h3>Minions Active: <span id="lblMinionsActive">0</span></h3>
+					<h3>Total Commands Executed: <span id="lblTotalCommandsExecuted">0</span></h3>
+					<h3>Max Recorded CpS: <span id="lblMaxRpS">0</span></h3>
 					<h3>Commands Per Second:</h3>
 					<h1 id="lblCmdPerSec" style="text-align: center; font-size:80px; padding:20px 0;">0</h1>
 
@@ -298,7 +299,7 @@
 	function UpdateMinions()
 	{
 		var minion_list = [];
-
+		$('#lblServersCount').html(minion_data.servers.length);
 		$.each(minion_data.servers, function(server_k, server_v){
 			if($('#' + server_k).length == 0)
 			{
