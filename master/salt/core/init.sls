@@ -5,6 +5,7 @@ core-tools:
             - git-core
             - sysv-rc-conf
             - htop
+            - sysstat
 
 /var/deploy:
     file:
