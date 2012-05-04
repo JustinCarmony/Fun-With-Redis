@@ -328,7 +328,7 @@
 				if($('#' + minion_v.server_id + ' #' + minion_k).length == 0)
 				{
 					// Remove any other conflicting minions assigned to other servers
-					$('#' + minion_v).remove();
+					$('#' + minion_k).remove();
 					var minion_html = '<div id="' + minion_k + '" class="minionListing alert alert-info"><h3>Minion #  <span class="minion_id">' + minion_v.minion_id + '</span></h3>'
 						+ '<strong>Status: </strong> <span class="status"></span><br/>'
 						+ '<strong>Internal ID: </strong> <span class="internal_id"></span><br/>'
