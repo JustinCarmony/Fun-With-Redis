@@ -145,7 +145,7 @@ class Minion
 
 	public function Idle()
 	{
-		usleep(1000000);
+		usleep(4000000);
 		echo ".";
 	}
 
