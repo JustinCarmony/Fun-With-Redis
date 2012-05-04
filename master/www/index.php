@@ -298,7 +298,7 @@
 	{
 		$.post('cmd.php', {cmd: "incr", args:["system.instance"]}, function(){
 			$.post('cmd.php', {cmd: "incr", args:["reboot.minion"]}, function(){
-
+				window.location.reload();
 			});
 		});
 	}
