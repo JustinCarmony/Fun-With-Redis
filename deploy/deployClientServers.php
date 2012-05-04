@@ -70,9 +70,9 @@ $predis->del('server.minions.deploying');
 
 
 $servers_to_deploy = 1;
-if(isset($argv[1]) && is_int($argv[1]))
+if(isset($argv[1]) && is_numeric($argv[1]))
 {
-	$servers_to_deploy = $argv[1];
+	$servers_to_deploy = (int)$argv[1];
 }
 
 
@@ -181,10 +181,10 @@ while($predis->hlen('server.minions.deploying') > 0)
 			system($cmd);
 			echo "\n\n.... Done!\n";
 
-
+			sleep(10);
 			echo "Accepting New Keys\n";
 			system("salt-key -A");
-			system('salt -t 1 "*" state.highstate');
+			system('salt -t 1 "'.$server_info->name.'" state.highstate');
 
 		}
 		else if($server_status->status == 'BUILD')
