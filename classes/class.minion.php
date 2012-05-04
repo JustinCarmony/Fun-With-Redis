@@ -100,9 +100,11 @@ class Minion
 
 	public function Heartbeat()
 	{
-		$this->predis->hset('minion.heartbeats', $this->minion_id, time());
+		$time = time();
+		$this->predis->hset('minion.heartbeats', $this->minion_id, $time);
 		$status = new stdClass();
 		$status->working = $this->working;
+		$status->heartbeat = $time;
 		$ips = Utility::GetMachineIPs();
 		$status->ip = $ips[3]; // Get the internal ID
 		$status->hostname = gethostname();

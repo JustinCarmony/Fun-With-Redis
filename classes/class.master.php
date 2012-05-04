@@ -94,6 +94,7 @@ class Master
 		{
 			if($time - $last_hb > self::MINION_HEARTBEAT_TIMEOUT)
 			{
+				$this->Log("Heartbeat Expired for $minion_id");
 				$this->predis->hdel('minion.heartbeats', $minion_id);
 				$this->predis->hdel('minion.status', $minion_id);
 			}
