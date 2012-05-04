@@ -207,8 +207,6 @@
 
 		$('#txtPipelineCount').change(function(){
 			$.post('cmd.php', {cmd: "set", args:["system.pipeline_count", $(this).val()]}, function(){
-				console.log("End Click");
-				$(btn).addClass('btn-primary');
 				PollMinions(true);
 			});
 		});
