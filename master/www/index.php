@@ -177,10 +177,10 @@
 
 		// Mode
 		$('#btnGrpMode .btn').click(function(){
-			$('#btnGrpWorkForce .btn').removeClass('btn-primary');
+			$('#btnGrpMode .btn').removeClass('btn-primary');
 			console.log("Start Click");
 			var btn = this;
-			$.post('cmd.php', {cmd: "set", args:["system.mode", $(this).data('mode')]}, function(){
+			$.post('mode.php', {mode: $(this).data('mode') }, function(){
 				console.log("End Click");
 				$(btn).addClass('btn-primary');
 				PollMinions(true);
