@@ -228,7 +228,7 @@ class Minion
 				$count++;
 				$num = rand(1, 10000000);
 
-				$this->predis->set('random_number.set', $num, $num);
+				$this->predis->hset('random_number.set', $num, $num);
 			}
 		}
 	}
