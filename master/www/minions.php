@@ -19,6 +19,7 @@ ksort($minions, SORT_NUMERIC);
 $servers = array();
 foreach($minions as $m)
 {
+	$m = json_decode($m);
 	if(!isset($servers['server_'.$m->ip]))
 	{
 		$servers['server_'.$m->ip] = array();
