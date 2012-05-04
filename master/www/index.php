@@ -297,6 +297,8 @@
 
 	function UpdateMinions()
 	{
+		var minion_list = [];
+
 		$.each(minion_data.servers, function(server_k, server_v){
 			console.log($('#' + server_k).length);
 			if($('#' + server_k).length == 0)
@@ -320,6 +322,35 @@
 					+ '<strong>IP:</strong> '+ server_data.ip + '<br /> <strong>Hostname: </strong> ' + server_data.hostname + '</p><div class="divServerMinionList"></div></div>'
 				$('#divServerList').append(server_html);
 			}
+
+			// Loop Through Minions
+			$.each(server_v, function(minion_k, minion_v){
+				minion_list.push(minion_k);
+				if($('#' + minion_v.server_id + ' #' + minion_k).length == 0)
+				{
+					// Remove any other conflicting minions assigned to other servers
+					$('#' + minion_v).remove();
+					var minion_html = '<div id="' + minion_k + '" class="minionListing alert alert-info"><h3>Minion #  <span class="minion_id">' + minion_v.minion_id + '</span></h3>'
+						+ '<strong>Status: </strong> <span class="status"></span><br/>'
+						+ '<strong>Internal ID: </strong> <span class="internal_id"></span><br/>'
+						+ '<strong>Latency: </strong> <span class="latency_ms"></span> ms<br/>';
+					$('#' + server_k + ' .divServerMinionList').append(minion_html);
+				}
+				var status = '';
+				if(minion_v.working)
+				{
+					status = 'Working';
+				}
+				else
+				{
+					status = '<em>Waiting</em>';
+				}
+				
+				$('#' + minion_v + ' .status').html(status);
+				$('#' + minion_v + ' .internal_id').html(minion_v.internal_id);
+				$('#' + minion_v + ' .latency').html(minion_v.latency);
+			});
+
 		});
 	}
 
