@@ -41,4 +41,4 @@ cd /var/fun && git pull:
         - file: /usr/local/bin/solo
 
 
-{% endrange %}
+{% endfor %}
