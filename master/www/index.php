@@ -222,7 +222,9 @@
 	function ResetPanel()
 	{
 		// Reset to Idle
+		$('#btnGrpWorkForce button[data-force="0"]').click();
 		$('#btnGrpMode button[data-mode="idle"]').click();
+		$('#btnGrpPipeline button[data-pipeline="off"]').click();
 	}
 
 	function PollStats()
