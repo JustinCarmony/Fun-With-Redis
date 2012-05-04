@@ -133,10 +133,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span12">
-				<div class="minion">
-					<div class="name">Name: minion3-redis-16</div>
-				</div>
+			<div id="divServerList" class="span12">
+
 			</div>
 		</div>
 	</div>
@@ -271,6 +269,8 @@
 		});
 	}
 
+	var minion_data = null;
+
 	function PollMinions(only_once)
 	{
 		$.ajax({
@@ -278,10 +278,12 @@
 			dataType: 'json',
 			success: function(data)
 			{
+				minion_data = data;
 				if(!only_once)
 				{
 					setTimeout("PollMinions(false);", 1000);
 				}
+				UpdateMinions();
 			},
 			error: function()
 			{
@@ -291,6 +293,23 @@
 				}
 			}
 		});
+	}
+
+	function UpdateMinions()
+	{
+		$.each(minion_data.servers, function(server_k, server_v){
+			if($('#' + server_k).html() == null)
+			{
+				// Get First Minion
+				var server_data = $.first(server_v);
+				console.log(server_data);
+
+				var server_html = '<div id="' + server_k + '" class="well server_listing"><p class="info">'
+					+ '<strong>IP:</strong> '+ '</p></div>'
+				$('#divServerList').append
+			}
+		});
+	}
 	}
 
 	function HardReset()
@@ -314,6 +333,7 @@
 		LoadData();
 		PollCpu();
 		PollStats();
+		PollMinions();
 		ResetPanel();
 	});
 </script>
