@@ -71,7 +71,7 @@ echo "Clean Up Complete\n";
 $cloud = new Cloud_Server(API_ID, API_KEY);
 //$cloud->enableDebug();
 $cloud->addServerFile('/root/.ssh/authorized_keys', ROOT_PUB_KEY);
-$servers_to_deploy = 2;
+$servers_to_deploy = 4;
 
 $server_start = $predis->get('server.minions.autoincr');
 if(!$server_start)
