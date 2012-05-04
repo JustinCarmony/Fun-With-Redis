@@ -104,7 +104,7 @@ class Minion
 
 	public function Work()
 	{
-		$percent = $this->predis->hget('system.workforce') / 10;
+		$percent = $this->predis->get('system.workforce') / 10;
 
 		if($percent < 1)
 		{
