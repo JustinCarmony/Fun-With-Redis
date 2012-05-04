@@ -78,6 +78,11 @@ class Master
 		$this->cmd_count = $info['total_commands_processed'];
 		$this->cmd_cps = $this->cmd_count - $last_cmd_count;
 		$this->predis->set('stats.cps', $this->cmd_cps);
+		$max_cps = $this->predis->get('stats.cps_max');
+		if($this->cmd_cps > $max_cps)
+		{
+			$this->predis->set('stats.cps_max', $this->cmd_cps);
+		}
 
 
 		// Determine Current CPU
