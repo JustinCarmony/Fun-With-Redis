@@ -297,9 +297,9 @@
 	function HardReset()
 	{
 		$.post('cmd.php', {cmd: "incr", args:["system.instance"]}, function(){
-			console.log("End Click");
-			$(btn).addClass('btn-primary');
-			PollMinions(true);
+			$.post('cmd.php', {cmd: "incr", args:["reboot.minion"]}, function(){
+
+			});
 		});
 	}
 
