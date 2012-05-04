@@ -299,7 +299,7 @@
 	{
 		$.each(minion_data.servers, function(server_k, server_v){
 			console.log($('#' + server_k).html());
-			if($('#' + server_k).html() == null)
+			if($('#' + server_k).length == 0)
 			{
 				// Get First Minion
 				var server_data;
