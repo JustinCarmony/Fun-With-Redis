@@ -31,3 +31,10 @@ php5-xcache:
     file:
         - directory
         - mode: 755
+
+/usr/local/bin/solo -port=5001 php /var/fun/master/bin/worker.master.php >> /tmp/worker.master.log:
+    cron:
+        - present
+        - user: root
+    require:
+        - file: /usr/local/bin/solo
