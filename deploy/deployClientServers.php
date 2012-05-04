@@ -53,8 +53,6 @@ object(stdClass)#18 (10) {
 chdir(dirname(__FILE__));
 
 // SSH ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
-system("cat ./scripts/minion");
-exit(0);
 
 echo "**** INIT ****\n";
 echo "Starting Bootstrap...\n";
@@ -147,7 +145,7 @@ while($predis->hlen('server.minions.deploying') > 0)
 			echo "**** Server $server_count [{$server_info->name}] is Active! ****\n\n";
 			$predis->hdel('server.minions.deploying', $server_number);
 			// Do SSH Stuff!
-			$cmd = SCP_CMD." ./scripts/minion-setup.sh root@".$server_info->addresses->public[0].":/tmp/minion-setup.sh";
+			$cmd = SCP_CMD." deploy/scripts/minion-setup.sh root@".$server_info->addresses->public[0].":/tmp/minion-setup.sh";
 
 			echo "Preparing to execute command: $cmd \n";
 			echo "Executing... \n";
@@ -155,7 +153,7 @@ while($predis->hlen('server.minions.deploying') > 0)
 			echo "\n\n.... Done!\n";
 
 			// Do SSH Stuff!
-			$cmd = SCP_CMD." ./scripts/minion root@".$server_info->addresses->public[0].":/tmp/minion";
+			$cmd = SCP_CMD." deploy/scripts/minion root@".$server_info->addresses->public[0].":/tmp/minion";
 
 			echo "Preparing to execute command: $cmd \n";
 			echo "Executing... \n";
