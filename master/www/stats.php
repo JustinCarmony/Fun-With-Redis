@@ -15,6 +15,23 @@ $stats = new stdClass();
 
 // Get Minion Statuses
 
+$minions = $predis->hgetall('minion.status');
+ksort($minions, SORT_NUMERIC);
+
+$minions_total = count($minions);
+$minions_active = 0;
+foreach($minions as $minion_json)
+{
+	$data = json_decode($minion_json);
+	if($data->working)
+	{
+		$minions_active++;
+	}
+}
+
+$stats->lblMinionsCount = $minions_total;
+$stats->lblMinionsActive = $minions_active;
+
 // Get Status for Mode
 $mode = $predis->get('system.mode');
 
