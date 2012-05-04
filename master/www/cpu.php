@@ -9,6 +9,9 @@
 
 chdir(dirname(__FILE__));
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $stats = new stdClass();
 
 $process_id = file_get_contents('/tmp/redis_process_id');
