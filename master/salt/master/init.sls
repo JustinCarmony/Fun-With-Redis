@@ -1,6 +1,8 @@
 apache2:
     pkg:
         - installed
+    service:
+        - running
     watch:
         - file: /etc/apache2/sites-available/default
 php5:
