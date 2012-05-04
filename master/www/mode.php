@@ -32,3 +32,5 @@ switch($mode)
 		// Do nothing! We're Idling
 		break;
 }
+
+echo '{ success: "true" }';
