@@ -301,6 +301,13 @@
 		});
 	}
 
+	function MasterReset()
+	{
+		$.post('cmd.php', {cmd: "incr", args:["reboot.master"]}, function(){
+			HardReset();
+		});
+	}
+
 	$(document).ready(function(){
 		Setup();
 		LoadData();
