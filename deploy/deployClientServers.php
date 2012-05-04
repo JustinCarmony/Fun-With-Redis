@@ -53,6 +53,8 @@ object(stdClass)#18 (10) {
 chdir(dirname(__FILE__));
 
 // SSH ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+system("cat ./scripts/minion");
+exit(0);
 
 echo "**** INIT ****\n";
 echo "Starting Bootstrap...\n";
