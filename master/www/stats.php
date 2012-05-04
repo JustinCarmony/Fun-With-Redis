@@ -17,7 +17,7 @@ $stats = new stdClass();
 
 $minions = $predis->hgetall('minion.status');
 
-var_dump($minions);
+//var_dump($minions);
 
 $minions_total = count($minions);
 $minions_active = 0;
