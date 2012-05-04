@@ -222,7 +222,7 @@
 	function ResetPanel()
 	{
 		// Reset to Idle
-		$('#btnGroupMode button[data-mode="idle"]').click();
+		$('#btnGrpMode button[data-mode="idle"]').click();
 	}
 
 	function PollStats()
