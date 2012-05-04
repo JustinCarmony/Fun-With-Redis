@@ -1,5 +1,5 @@
 core-tools:
-    - pkg:
+    pkg:
         - installed
         - names:
             - git-core
