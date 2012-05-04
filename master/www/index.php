@@ -61,7 +61,7 @@
 			<div class="span8 offset2">
 				<h2>Current Mode Information</h2>
 				<div class="well">
-					<div id="modeIdle">
+					<div id="lblModeStatus">
 						<h1 style="text-align: center;">I'm Idling... Please touch my buttons...</h1>
 					</div>
 				</div>
