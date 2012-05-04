@@ -19,13 +19,14 @@ ksort($minions, SORT_NUMERIC);
 $servers = array();
 foreach($minions as $m)
 {
+	$key = str_replace('.', '_', $m->ip);
 	$m = json_decode($m);
-	if(!isset($servers['server_'.$m->ip]))
+	if(!isset($servers[$key]))
 	{
-		$servers['server_'.$m->ip] = array();
+		$servers[$key] = array();
 	}
 
-	$servers['server_'.$m->ip]['minion_'.$m->minion_id] = $m;
+	$servers[$key]['minion_'.$m->minion_id] = $m;
 }
 
 $stats->servers = $servers;
