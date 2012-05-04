@@ -345,9 +345,9 @@
 					status = '<em>Waiting</em>';
 				}
 				
-				$('#' + minion_v + ' .status').html(status);
-				$('#' + minion_v + ' .internal_id').html(minion_v.internal_id);
-				$('#' + minion_v + ' .latency').html(minion_v.latency);
+				$('#' + minion_k + ' .status').html(status);
+				$('#' + minion_k + ' .internal_id').html(minion_v.internal_id);
+				$('#' + minion_k + ' .latency').html(minion_v.latency);
 			});
 
 		});
