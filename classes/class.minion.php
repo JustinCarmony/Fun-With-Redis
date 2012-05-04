@@ -57,6 +57,8 @@ class Minion
 			// Check to see if a master reboot has been issued
 			if($this->predis->get('reboot.minion') != $this->reboot_id)
 			{
+				$this->predis->hdel('minion.heartbeat', $this->minion_id);
+				$this->predis->hdel('minion.status', $this->minion_id);
 				$this->Log("Reboot Detected!");
 				$this->Log("Shutting Down...");
 				return;
@@ -78,7 +80,7 @@ class Minion
 	public function Startup()
 	{
 		$this->Log("Random Sleep to offset Minions");
-		
+
 		usleep(rand(1000000,5000000));
 		$this->Log("Executing Minion Startup...");
 		$this->Log("Internal ID: ".$this->internal_id);
