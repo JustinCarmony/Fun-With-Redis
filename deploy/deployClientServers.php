@@ -111,7 +111,13 @@ while($server_count < $server_end)
 	
 	if(!$predis->hget('server.minions.info', $server_count))
 	{
+		try {
 		$response = $cloud->createServer($name, SERVER_IMAGE, SERVER_FLAVOR);
+		} catch (Exception $ex) {
+			// So something smart down the road
+			$response = false;
+		}
+
 		if($response)
 		{
 			$server = json_decode($response);
@@ -157,8 +163,11 @@ while($predis->hlen('server.minions.deploying') > 0)
 
 		echo "Done!\n";
 
+		$wait = true;
+
 		if($server_status->status == 'ACTIVE')
 		{
+			$wait = false;
 			echo "**** Server $server_count [{$server_info->name}] is Active! ****\n\n";
 			$predis->hdel('server.minions.deploying', $server_number);
 			// Do SSH Stuff!
@@ -199,10 +208,12 @@ while($predis->hlen('server.minions.deploying') > 0)
 		{
 			echo "  Server Number $server_number [{$server_info->name}] has Unknown status: ".$server_status->status."\n";
 		}
-
-		echo "  Waiting 15 seconds...";
-		sleep(15);
-		echo " Done!\n";
+		if($wait)
+		{
+			echo "  Waiting 15 seconds...";
+			sleep(15);
+			echo " Done!\n";
+		}
 	}
 }
 
