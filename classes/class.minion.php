@@ -208,7 +208,7 @@ class Minion
 
 				$num = rand(1, 10000000);
 
-				$pipe->set('random_number.set', $num, $num);
+				$pipe->hset('random_number.set', $num, $num);
 				if($count % $this->pipeline_count == 0)
 				{
 					$pipe->execute();
