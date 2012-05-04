@@ -17,4 +17,6 @@ echo "**** Copying Salt Minion Conf ****"
 cp -f /tmp/minion /etc/salt/minion
 chmod 755 /etc/salt/minion
 
+/etc/init.d/salt-minion restart
+
 echo "**** DONE ****"

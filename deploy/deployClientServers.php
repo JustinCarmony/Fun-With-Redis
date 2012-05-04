@@ -170,6 +170,11 @@ while($predis->hlen('server.minions.deploying') > 0)
 			system($cmd);
 			echo "\n\n.... Done!\n";
 
+
+			echo "Accepting New Keys\n";
+			system("salt-key -A");
+			system('salt -t 1 "*" state.highstate');
+
 		}
 		else if($server_status->status == 'BUILD')
 		{
