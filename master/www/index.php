@@ -298,7 +298,7 @@
 	function UpdateMinions()
 	{
 		$.each(minion_data.servers, function(server_k, server_v){
-			console.log('#' + server_k);
+			console.log($('#' + server_k).html());
 			if($('#' + server_k).html() == null)
 			{
 				// Get First Minion
