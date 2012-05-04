@@ -59,6 +59,8 @@ echo "Starting Bootstrap...\n";
 
 require '../bootstrap.php';
 
+// Our CWD is the root dir where bootstrap.php is at
+
 define('SSH_CMD', 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no');
 define('SCP_CMD', 'scp -o "StrictHostKeyChecking false" -o "UserKnownHostsFile /dev/null"');
 

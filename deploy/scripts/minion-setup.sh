@@ -1,11 +1,13 @@
 echo "**** Starting Minion Setup ****"
 
 echo "**** Installing Salt ****"
+aptitude update
+aptitude -y safe-upgrade
 aptitude -y install python-software-properties
 add-apt-repository ppa:saltstack/salt
 aptitude update
-aptitude safe-upgrade
-aptitude install salt-minion
+aptitude -y safe-upgrade
+aptitude -y install salt-minion
 
 /etc/init.d/salt-minion restart
 /etc/init.d/salt-minion restart
