@@ -216,7 +216,8 @@
 
 	function LoadData()
 	{
-
+		// Reset to Idle
+		$('#btnGroupMode .btn[data-mode="idle"]').click();
 	}
 
 	function PollStats()
