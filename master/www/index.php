@@ -302,9 +302,9 @@
 			{
 				// Get First Minion
 				var server_data;
-				for (var i in obj) {
-					if (obj.hasOwnProperty(i) && typeof(i) !== 'function') {
-						server_data = obj[i];
+				for (var i in server_v) {
+					if (server_v.hasOwnProperty(i) && typeof(i) !== 'function') {
+						server_data = server_v[i];
 						break;
 					}
 				}
