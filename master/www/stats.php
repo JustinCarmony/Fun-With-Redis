@@ -12,6 +12,6 @@ chdir(dirname(__FILE__));
 require '../../bootstrap.php';
 
 $stats = new stdClass();
-$stats->lblCmdPerSec = $predis->get('stats.cps');
+$stats->lblCmdPerSec = number_format($predis->get('stats.cps'));
 echo json_encode($stats);
 exit();
