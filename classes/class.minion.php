@@ -104,6 +104,20 @@ class Minion
 
 	public function Work()
 	{
+		$percent = $this->predis->hget('system.workforce') / 10;
+
+		if($percent < 1)
+		{
+			usleep(1000000);
+			return;
+		}
+
+		if($this->instance_id % 10 > $percent)
+		{
+			usleep(1000000);
+			return;
+		}
+
 		$method = $this->method;
 		if(!$method)
 		{
