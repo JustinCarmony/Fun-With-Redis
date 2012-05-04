@@ -19,8 +19,6 @@ $cmd = "pidstat -p $process_id 1 1";
 $output = array();
 exec($cmd, $output);
 
-var_dump($output);
-
 $line = $output[3]; // get the line we're interested in
 str_replace("\t", ' ', $line); // Remove Tabs
 // Strip out extra spaces
