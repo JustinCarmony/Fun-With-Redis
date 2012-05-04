@@ -122,6 +122,8 @@ class Minion
 		$time = time();
 		$this->predis->hset('minion.heartbeats', $this->minion_id, $time);
 		$status = new stdClass();
+		$status->minion_id = $this->minion_id;
+		$status->internal_id = $this->internal_id;
 		$status->working = $this->working;
 		$status->heartbeat = $time;
 		$status->latency_ms = $this->latency_ms;

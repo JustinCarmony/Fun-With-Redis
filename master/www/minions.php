@@ -13,7 +13,21 @@ require '../../bootstrap.php';
 
 $stats = new stdClass();
 
+$minions = $predis->hgetall('minions');
+ksort($minions, SORT_NUMERIC);
 
+$servers = array();
+foreach($minions as $m)
+{
+	if(!isset($servers['server_'.$m->ip]))
+	{
+		$servers['server_'.$m->ip] = array();
+	}
+
+	$servers['server_'.$m->ip]['minion_'.$m->minion_id] = $m;
+}
+
+$stats->servers = $servers;
 
 echo json_encode($stats);
 exit();
