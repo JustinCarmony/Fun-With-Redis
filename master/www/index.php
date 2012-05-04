@@ -98,13 +98,13 @@
 				<hr/>
 				<h3>Mode</h3>
 				<div id="btnGrpMode" class="btn-group" data-toggle="buttons-radio">
-					<button data-method="idle" class="btn active btn-primary">Idle</button>
-					<button data-method="increment" class="btn">Incr</button>
-					<button data-method="random_number" class="btn">Rand Num</button>
-					<button data-method="md5_gen" class="btn">MD5 Gen</button>
-					<button data-method="rand_read" class="btn">Rand Read</button>
-					<button data-method="rand_write" class="btn">Rand Write</button>
-					<button data-method="bench" class="btn">Bench</button>
+					<button data-mode="idle" class="btn active btn-primary">Idle</button>
+					<button data-mode="increment" class="btn">Incr</button>
+					<button data-mode="random_number" class="btn">Rand Num</button>
+					<button data-mode="md5_gen" class="btn">MD5 Gen</button>
+					<button data-mode="rand_read" class="btn">Rand Read</button>
+					<button data-mode="rand_write" class="btn">Rand Write</button>
+					<button data-mode="bench" class="btn">Bench</button>
 				</div>
 				<hr/>
 				<h3>Pipeline</h3>
