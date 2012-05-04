@@ -71,7 +71,7 @@ echo "Clean Up Complete\n";
 $cloud = new Cloud_Server(API_ID, API_KEY);
 //$cloud->enableDebug();
 $cloud->addServerFile('/root/.ssh/authorized_keys', ROOT_PUB_KEY);
-$servers_to_deploy = 4;
+$servers_to_deploy = 1;
 
 $server_start = $predis->get('server.minions.autoincr');
 if(!$server_start)
@@ -89,7 +89,7 @@ echo "**** STARTING TO CREATE SERVERS ****\n";
 while($server_count < $server_end)
 {
 	$server_count = $predis->incr('server.minions.autoincr');
-	$name = MINION_PREFIX.$server_count.MINION_SUFFIX;
+	$name = $server_name = MINION_PREFIX.$server_count.MINION_SUFFIX;
 	echo "  Creating Server Number $server_count [$server_name]... ";
 	
 	if(!$predis->hget('server.minions.info', $server_count))
@@ -145,7 +145,7 @@ while($predis->hlen('server.minions.deploying') > 0)
 			echo "**** Server $server_count [{$server_info->name}] is Active! ****\n\n";
 			$predis->hdel('server.minions.deploying', $server_number);
 			// Do SSH Stuff!
-			$cmd = SCP_CMD." ./minion-setup.sh root@".$server_info->addresses->public[0].":/tmp/minion-setup.sh";
+			$cmd = SCP_CMD." ./scripts/minion-setup.sh root@".$server_info->addresses->public[0].":/tmp/minion-setup.sh";
 
 			echo "Preparing to execute command: $cmd \n";
 			echo "Executing... \n";
@@ -153,7 +153,7 @@ while($predis->hlen('server.minions.deploying') > 0)
 			echo "\n\n.... Done!\n";
 
 			// Do SSH Stuff!
-			$cmd = SCP_CMD." ./minion root@".$server_info->addresses->public[0].":/tmp/minion";
+			$cmd = SCP_CMD." ./scripts/minion root@".$server_info->addresses->public[0].":/tmp/minion";
 
 			echo "Preparing to execute command: $cmd \n";
 			echo "Executing... \n";
