@@ -16,8 +16,8 @@ $stats = new stdClass();
 // Get Minion Statuses
 
 $minions = $predis->hgetall('minion.status');
-ksort($minions, SORT_NUMERIC);
-$this->minions = $minions;
+
+
 
 $minions_total = count($minions);
 $minions_active = 0;
