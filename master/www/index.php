@@ -316,7 +316,7 @@
 					return;
 				}
 
-				var server_html = '<div id="' + server_k + '" class="well serverListing" style="width:200px; float:left;"><h3>Server</h3><p class="info">'
+				var server_html = '<div id="' + server_k + '" class="well serverListing" style="width:200px; padding-right:20px; float:left;"><h3>Server</h3><p class="info">'
 					+ '<strong>IP:</strong> '+ server_data.ip + '<br /> <strong>Hostname: </strong> ' + server_data.hostname + '</p><div class="divServerMinionList"></div></div>'
 				$('#divServerList').append(server_html);
 			}
