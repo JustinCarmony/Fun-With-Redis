@@ -76,11 +76,17 @@ class Master
 		// Determine Current CpS
 		$info = $this->predis->info();
 		$last_cmd_count = $this->cmd_count;
-        $last_cmd_time = $this->cmd_time = microtime(true);
+        $last_cmd_time = $this->cmd_time;
 		$this->cmd_count = $info['total_commands_processed'];
 		if($last_cmd_count > 0)
 		{
-			$this->cmd_cps = $this->cmd_count - $last_cmd_count;
+			$this->cmd_time = microtime(true);
+            $between = $this->cmd_time - $last_cmd_time;
+            if($between <= 0)
+            {
+                $between = 0.1;
+            }
+            $this->cmd_cps = round(($this->cmd_count - $last_cmd_count) / $between, 0);
 			$prev_cmd_cps = $this->predis->get('stats.cps');
 			$this->predis->set('stats.cps', $this->cmd_cps);
 			$max_cps = $this->predis->get('stats.cps_max');
