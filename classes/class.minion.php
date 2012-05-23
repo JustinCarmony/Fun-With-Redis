@@ -24,6 +24,8 @@ class Minion
 	public $latency_ms = null;
 	public $latency_start = 0;
 
+    const ALLOWED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()-=_\\+[]{}|;':\",./<>?";
+
 
 	public function __construct($predis, $internal_id)
 	{
@@ -266,8 +268,57 @@ class Minion
 
 	public function Md5_Gen()
 	{
-		usleep(1000000);
-		echo ".";
+        $count = 0;
+        $limit = 1000;
+        if($this->pipeline == 'on')
+        {
+            $pipe = null;
+            $end = $this->predis->incr('md5_gen.value', $limit);
+            $start = $count = $end - $limit;
+            while($count < $end)
+            {
+                $count++;
+                if(!$pipe)
+                {
+                    $pipe = $this->predis->pipeline();
+                }
+
+                $value = self::GetHashFromID($count);
+                $hash = md5($value);
+                $group = substr($hash, 0, 2);
+                $pipe->hset('md5_gen.set:'.$group, $hash, $value);
+                if($count % $this->pipeline_count == 0)
+                {
+                    $this->StartLatency();
+                    $pipe->execute();
+                    $this->EndLatency();
+                    unset($pipe);
+                }
+            }
+
+            if($pipe)
+            {
+                $this->StartLatency();
+                $pipe->execute();
+                $this->EndLatency();
+            }
+        }
+        else
+        {
+            $end = $this->predis->incr('md5_gen.value', $limit);
+            $start = $count = $end - $limit;
+            while($count < $limit)
+            {
+                $count++;
+                $value = self::GetHashFromID($count);
+                $hash = md5($value);
+                $group = substr($hash, 0, 2);
+
+                $this->StartLatency();
+                $this->predis->hset('md5_gen.set:'.$group, $hash, $value);
+                $this->EndLatency();
+            }
+        }
 	}
 
 	public function Rand_Read()
@@ -287,4 +338,17 @@ class Minion
 		usleep(1000000);
 		echo ".";
 	}
+
+    static public function GetHashFromID ($integer)
+    {
+        $base = self::ALLOWED_CHARS;
+        $length = strlen($base);
+        $out = '';
+        while($integer > $length - 1)
+        {
+            $out = $base[fmod($integer, $length)] . $out;
+            $integer = floor( $integer / $length );
+        }
+        return $base[$integer] . $out;
+    }
 }

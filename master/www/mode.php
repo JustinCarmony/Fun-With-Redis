@@ -29,6 +29,9 @@ switch($mode)
 	case 'increment':
 		$predis->set('increment.value', 0);
 		break;
+    case 'md5_gen':
+        $predis->set('md5_gen.value', 0);
+        break;
 	case 'idle':
 	default:
 		// Do nothing! We're Idling

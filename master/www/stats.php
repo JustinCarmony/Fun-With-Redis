@@ -60,6 +60,10 @@ switch ($mode)
         }
 		$modeStatus = '<h1 style="text-align:center;">Randomly Generated '.number_format($len).' of 5,000,000</h1>';
 		break;
+    case 'md5_gen':
+        $value = Minion::GetHashFromID($predis->get('md5_gen.value'));
+        $modeStatus = '<h1 style="text-align:center;">Rainbow Dictionary Up To: '.$value.'</h1>';
+        break;
 }
 $stats->lblModeStatus = $modeStatus;
 $stats->lblTotalKeys = $info['db0']['keys'];
