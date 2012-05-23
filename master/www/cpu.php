@@ -20,7 +20,7 @@ if($process_id > 0)
     $cmd = "pidstat -p $process_id 1 1";
     header('x-cmd: '. $cmd);
     $output = array();
-    //exec($cmd, $output);
+    exec($cmd, $output);
 
     $line = $output[3]; // get the line we're interested in
     str_replace("\t", ' ', $line); // Remove Tabs
