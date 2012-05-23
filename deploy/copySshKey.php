@@ -34,6 +34,7 @@ foreach($servers as $srv_json)
     echo "\n\n**********\n";
     echo "Server: $srv->name Password: $srv->adminPass\n";
     $cmd = "ssh-copy-id root@".$srv->addresses->public[0];
+    system($cmd);
     echo "\n\n ... Done!\n";
 }
 
