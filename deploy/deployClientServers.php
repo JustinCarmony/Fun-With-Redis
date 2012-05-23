@@ -115,6 +115,7 @@ while($server_count < $server_end)
 		$response = $cloud->createServer($name, SERVER_IMAGE, SERVER_FLAVOR);
 		} catch (Exception $ex) {
 			// So something smart down the road
+            var_dump($ex);
 			$response = false;
 		}
 
