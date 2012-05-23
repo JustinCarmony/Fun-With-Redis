@@ -19,4 +19,4 @@ echo "Starting Bootstrap...\n";
 require '../bootstrap.php';
 
 $cloud = new Cloud_Server(API_ID, API_KEY);
-var_dump($cloud->getLimits());
+var_dump(json_decode($cloud->getLimits()));
