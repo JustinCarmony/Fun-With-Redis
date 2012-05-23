@@ -307,7 +307,7 @@ class Minion
         {
             $end = $this->predis->incr('md5_gen.value', $limit);
             $start = $count = $end - $limit;
-            while($count < $limit)
+            while($count < $end)
             {
                 $count++;
                 $value = self::GetHashFromID($count);
