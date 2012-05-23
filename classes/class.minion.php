@@ -231,7 +231,7 @@ class Minion
 
 				$num = rand(1, 5000000);
 
-				$pipe->set('random_number.set'.$num, $num);
+				$pipe->set('random_number.set:'.$num, $num);
 				if($count % $this->pipeline_count == 0)
 				{
 					$this->StartLatency();
@@ -256,7 +256,7 @@ class Minion
 				$num = rand(1, 5000000);
 
 				$this->StartLatency();
-				$this->predis->hset('random_number.set', $num, $num);
+				$this->predis->set('random_number.set:'.$num, $num);
 				$this->EndLatency();
 			}
 		}
