@@ -52,4 +52,14 @@ if($mode != 'random_number')
     }
 }
 
+if($mode != 'random_number')
+{
+    $keys = $predis->keys('md5_gen.*');
+    foreach($keys as $k)
+    {
+        $predis->del($k);
+    }
+}
+
+
 echo '{ success: "true" }';

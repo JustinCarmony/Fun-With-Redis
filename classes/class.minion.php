@@ -24,7 +24,7 @@ class Minion
 	public $latency_ms = null;
 	public $latency_start = 0;
 
-    const ALLOWED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()-=_\\+[]{}|;':\",./<>?";
+    const ALLOWED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 
 	public function __construct($predis, $internal_id)
