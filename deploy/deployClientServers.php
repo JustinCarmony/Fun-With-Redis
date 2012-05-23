@@ -77,13 +77,17 @@ if(isset($argv[1]) && is_numeric($argv[1]))
 	$servers_to_deploy = (int)$argv[1];
 }
 
-$servers_to_deploy = 0;
+//$servers_to_deploy = 0;
 
 
 
 echo "Clean Up Complete\n";
 
 echo "\n***** Number of Servers to Deploy: $servers_to_deploy ******\n";
+
+echo "Is this correct? (hit enter to continue, break script if not)\n";
+
+fgets(STDIN);
 
 $cloud = new Cloud_Server(API_ID, API_KEY);
 //$cloud->enableDebug();
