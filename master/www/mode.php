@@ -7,6 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
+set_time_limit(0);
+
 chdir(dirname(__FILE__));
 
 require '../../bootstrap.php';
