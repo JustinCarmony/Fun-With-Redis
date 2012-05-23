@@ -3,12 +3,14 @@
 	[
 		{
 			"path": "/Users/justin/git/github/Fun-With-Redis/master/salt"
+		},
+		{
+			"path": "/Users/jcarmony/git/github/Fun-With-Redis/master/salt"
 		}
-	]
-	,"settings":
+	],
+	"settings":
 	{
 		"tab_size": 4,
-    	"translate_tabs_to_spaces": true
-        
+		"translate_tabs_to_spaces": true
 	}
 }

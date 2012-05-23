@@ -6,6 +6,7 @@ core-tools:
             - sysv-rc-conf
             - htop
             - sysstat
+            - siege
 
 /var/deploy:
     file:
