@@ -147,7 +147,7 @@ class Minion
 			return;
 		}
 
-		if(($this->minion_id % 10) - 1 > $percent)
+		if(($this->minion_id % 10) > $percent - 1)
 		{
 			usleep(4000000);
 			return;
