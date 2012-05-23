@@ -62,7 +62,7 @@ switch ($mode)
 		break;
 }
 $stats->lblModeStatus = $modeStatus;
-$stats->info = $info;
+$stats->lblTotalKeys = $info->db0->keys;
 
 // Get the Commands Per Second
 $stats->lblCmdPerSec = number_format($predis->get('stats.cps'));
