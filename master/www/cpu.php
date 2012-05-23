@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 $stats = new stdClass();
 
 $process_id = file_get_contents('/tmp/redis_process_id');
-if(count($process_id) > 0)
+if($process_id > 0)
 {
     $cmd = "pidstat -p $process_id 1 1";
     header('x-cmd: '. $cmd);
