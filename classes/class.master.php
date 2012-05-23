@@ -88,10 +88,10 @@ class Master
 			}
 		}
 		// Determine Current CPU
-		/* $process_id = $info['process_id'];
+		$process_id = $info['process_id'];
 		file_put_contents('/tmp/redis_process_id', $process_id);
 		$cpu = trim(exec("ps S -p $process_id -o pcpu="));
-		$this->predis->set('stats.cpu', $cpu); */
+		$this->predis->set('stats.cpu', $cpu);
 
 		// Prune Workers
 		$time = time();
