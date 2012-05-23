@@ -125,7 +125,7 @@
 					<h3>Servers Available: <span id="lblServersCount">0</span></h3>
 					<h3>Minions Available: <span id="lblMinionsCount">0</span></h3>
 					<h3>Minions Active: <span id="lblMinionsActive">0</span></h3>
-                    <h3>Minions Active: <span id="lblTotalKeys">0</span></h3>
+                    <h3>Total Keys: <span id="lblTotalKeys">0</span></h3>
 					<h3>Total Commands Executed: <span id="lblTotalCommandsExecuted">0</span></h3>
 					<h3>Max Recorded CpS: <span id="lblMaxRpS">0</span></h3>
 					<h3>Commands Per Second:</h3>
