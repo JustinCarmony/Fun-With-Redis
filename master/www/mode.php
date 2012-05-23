@@ -40,7 +40,11 @@ if($mode != 'increment')
 
 if($mode != 'random_number')
 {
-	$predis->del('random_number.set');
+	$keys = $predis->keys('random_number.*');
+    foreach($keys as $k)
+    {
+        $predis->del($k);
+    }
 }
 
 echo '{ success: "true" }';
