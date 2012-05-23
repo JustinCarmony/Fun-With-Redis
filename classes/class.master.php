@@ -19,7 +19,7 @@ class Master
     protected $cmd_time = null;
 	protected $cmd_cps = null;
 
-	const MINION_HEARTBEAT_TIMEOUT = 60;
+	const MINION_HEARTBEAT_TIMEOUT = 30;
 
 	public function __construct($predis)
 	{
