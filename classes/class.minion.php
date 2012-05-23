@@ -273,7 +273,7 @@ class Minion
         if($this->pipeline == 'on')
         {
             $pipe = null;
-            $end = $this->predis->incr('md5_gen.value', $limit);
+            $end = $this->predis->incrby('md5_gen.value', $limit);
             $start = $count = $end - $limit;
             while($count < $end)
             {
@@ -305,7 +305,7 @@ class Minion
         }
         else
         {
-            $end = $this->predis->incr('md5_gen.value', $limit);
+            $end = $this->predis->incrby('md5_gen.value', $limit);
             $start = $count = $end - $limit;
             while($count < $end)
             {
