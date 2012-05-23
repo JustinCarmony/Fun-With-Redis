@@ -174,7 +174,7 @@ class Minion
 	public function Increment()
 	{
 		$count = 0;
-		$limit = 5000;
+		$limit = 1000;
 		if($this->pipeline == 'on')
 		{
 			$pipe = null;
@@ -217,7 +217,7 @@ class Minion
 	public function Random_Number()
 	{
 		$count = 0;
-		$limit = 5000;
+		$limit = 1000;
 		if($this->pipeline == 'on')
 		{
 			$pipe = null;
