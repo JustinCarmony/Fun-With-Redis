@@ -51,7 +51,13 @@ switch ($mode)
 		$modeStatus = '<h1 style="text-align:center;">Current Increment Value: '.$val.'</h1>';
 		break;
 	case 'random_number':
-		$len = count($predis->keys('random_number.*'));
+		$len = 0;
+
+        $keys = $predis->keys('random_number.*');
+        foreach($keys as $k)
+        {
+            $len += $predis->hlen($k);
+        }
 		$modeStatus = '<h1 style="text-align:center;">Randomly Generated '.number_format($len).' of 5,000,000</h1>';
 		break;
 }
