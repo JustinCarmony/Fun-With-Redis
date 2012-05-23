@@ -16,9 +16,10 @@ class Master
 	protected $instance_id = null;
 	protected $reboot_id = null;
 	protected $cmd_count = null;
+    protected $cmd_time = null;
 	protected $cmd_cps = null;
 
-	const MINION_HEARTBEAT_TIMEOUT = 15;
+	const MINION_HEARTBEAT_TIMEOUT = 60;
 
 	public function __construct($predis)
 	{
@@ -75,6 +76,7 @@ class Master
 		// Determine Current CpS
 		$info = $this->predis->info();
 		$last_cmd_count = $this->cmd_count;
+        $last_cmd_time = $this->cmd_time = microtime(true);
 		$this->cmd_count = $info['total_commands_processed'];
 		if($last_cmd_count > 0)
 		{
